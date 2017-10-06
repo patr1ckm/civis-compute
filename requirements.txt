@@ -1,0 +1,8 @@
+click~=6.7
+nbformat~=4.4
+nbconvert~=5.3
+civis~=1.6
+pyyaml~=3.12
+python-dateutil~=2.6
+ipython~=5.4 ; python_version >= '2.7' and python_version < '3.0'
+ipython~=6.2 ; python_version >= '3.0'
