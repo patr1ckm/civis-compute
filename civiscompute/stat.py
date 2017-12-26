@@ -230,7 +230,7 @@ def _status(scriptid, mine, user, runs, runid, last, hidden, state):
             with open(os.path.expandvars(os.path.expanduser(
                     LASTSCRIPTID_LOC)), 'r') as fp:
                 scriptid = int(fp.read().strip())
-        except:
+        except Exception as e:
             print('The most recently run script ID could not be found!',
                   file=sys.stderr)
             sys.exit(-1)
