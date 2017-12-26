@@ -176,7 +176,7 @@ def test_build_container_cmd(
     if stype == 'py':
         cmd = 'python '
     elif stype == 'r' or stype == 'R':
-        cmd = 'Rscript '
+        cmd = 'Rscript --default-packages=methods,datasets,utils,grDevices,graphics,stats '
     elif stype == 'ipynb':
         cmd = "ipython --InteractiveShell.colors='nocolor' "
     elif stype:
@@ -358,7 +358,9 @@ def test_sub_job(mock_sub, mock_ftc, script, dry_run, repo, cleandir):
 
         # check command invocation
         if script.endswith('.r'):
-            assert 'Rscript blah.r a b test2.txt' in args[1]
+            assert ('Rscript --default-packages=methods,datasets,utils,'
+                    'grDevices,graphics,stats blah.r '
+                    'a b test2.txt') in args[1]
         elif script.endswith('.py'):
             assert 'python script.py a b test2.txt' in args[1]
         else:
