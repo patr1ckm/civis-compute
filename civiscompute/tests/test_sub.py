@@ -176,7 +176,8 @@ def test_build_container_cmd(
     if stype == 'py':
         cmd = 'python '
     elif stype == 'r' or stype == 'R':
-        cmd = 'Rscript --default-packages=methods,datasets,utils,grDevices,graphics,stats '
+        cmd = ('Rscript --default-packages=methods,'
+               'datasets,utils,grDevices,graphics,stats ')
     elif stype == 'ipynb':
         cmd = "ipython --InteractiveShell.colors='nocolor' "
     elif stype:
