@@ -101,7 +101,8 @@ def _build_container_cmd(
             # Set ipython to not output color so container logs are readable.
             cmd = "ipython --InteractiveShell.colors='nocolor'"
         elif script.endswith('.r') or script.endswith('.R'):
-            cmd = 'Rscript --default-packages=methods,datasets,utils,grDevices,graphics,stats'
+            cmd = ('Rscript --default-packages=methods,datasets,'
+                   'utils,grDevices,graphics,stats')
         else:
             cmd = 'sh'
 
